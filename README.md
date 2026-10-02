@@ -107,5 +107,5 @@ See the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) for th
 ---
 
 <p align="center"> 
-  Developed by: <a href="https://www.github.com/sayanm029">Sayan Malik</a>
+  Developed by: <a href="https://www.github.com/msayan19">Sayan Malik</a>
 </p>
