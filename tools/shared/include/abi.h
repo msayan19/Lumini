@@ -1,0 +1,24 @@
+#pragma once
+
+#include "reg.h"
+#include "isa.h"
+#define ABI_VERSION 1
+
+
+#define INSTRUCTION_BYTES 4			// 4 bytes
+
+/* Default Boundaries */
+#define STACK_SIZE 1U << 23U		// 8 MB
+
+#define MAX_HEAP_SIZE 1U << 31U		// 2 GB
+#define MAX_DATA_SIZE 1U << 30U		// 1 GB
+#define MAX_PROGRAM_SIZE 1U << 29U	// 512 MB
+
+#define MAX_INSTRUCTIONS ( MAX_PROGRAM_SIZE / INSTRUCTION_BYTES )
+
+#define LBP_EXTENSION ".lbp"
+#define LBP_FILE_MAX_SIZE (MAX_PROGRAM_SIZE + MAX_DATA_SIZE + LBP_HEADER_SIZE)
+
+#define MIN_HEAP_SIZE 0
+#define MIN_DATA_SIZE 0
+#define MIN_PROGRAM_SIZE 4
