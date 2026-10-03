@@ -6,7 +6,9 @@
 
 #define LVM_INSTANCE_INITIALIZED 0x0U
 #define LVM_INSTANCE_READY 0x1U
-#define LVM_INSTACE_FREED 0x2U
+#define LVM_INSTANCE_FREED 0x2U
+
+#define LVM_INSTANCE_SETUP_FAILED 0x03
 
 typedef struct {
 	union register_t reg[TOTAL_REGISTER_COUNT];
@@ -22,15 +24,16 @@ typedef struct {
 } instance_t;
 
 /**
- * @brief create an instace object
+ * @brief create an instance object
  * @return Initialized instance object
  */
-instance_t create_instace(void);
+instance_t create_instance(void);
 /**
  * @brief set the up instance object
  * 
  * @param instance instance object to setup
  * @param file lbp file object to borrow data & program
+ * @note do not free the contents of provided (lbp_file*) before the call of `destory_instance()`
  * @return true on success
  * @return false on failure
  */
