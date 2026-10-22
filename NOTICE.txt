@@ -1,0 +1,17 @@
+=========================================================================
+LOGO & ASSET POLICY
+=========================================================================
+The official icons and logos located in the 'assets/' directory of this 
+repository are protected by copyright owned by [Your Name or Organization, 2026].
+
+TERMS OF USE:
+* Use it freely: You are welcome to use these assets in your projects, 
+  tutorials, or media.
+* Modify it freely: You are allowed to edit, alter, or remix the artwork.
+
+USAGE RESTRICTIONS:
+* Official Designation: You may not present or claim any modified or 
+  unmodified version of these assets as the official logo of the language.
+* Endorsement & Affiliation: You may not use any asset from the 'assets/' 
+  directory in any manner that implies official endorsement, sponsorship, 
+  or affiliation with the core language maintainers.
