@@ -34,17 +34,22 @@
 
 
 #define REGISTER_COUNT 256UL
+#define RESERVED_REGS 8U	// total reserved registers
+#define REG_FL 0U			// Flags Register
+#define REG_PC 1U			// Program Counter
+#define REG_SP 2U			// Stack Pointer
+#define REG_MA 3U			// Memory Address
+#define REG_TV 4U			// Temporary Value
+#define REG_R0 5U			// Reserved 0
+#define REG_R1 6U			// Reserved 1
+#define REG_R2 7U			// Reserved 2
 
-#define REG_FL 0U
-#define REG_PC 1U
-#define REG_SP 2U
-#define REG_MA 3U
-#define REG_TV 4U
-#define REG_R0 5U
-#define REG_R1 6U
-#define REG_R2 7U
 
-
+typedef union {
+	uint64_t u64;
+	int64_t i64;
+	double f64;
+} reg_t;
 
 typedef union {
 	uint32_t raw;				// raw instruction
@@ -63,10 +68,11 @@ typedef union {
 	} itype;
 
 	struct {
-		uint32_t operation : 8;      		// Operation
-	   uint32_t imm24: 24;   		// 24-bit Immediate
+		uint32_t operation : 8; // Operation
+	   uint32_t imm24: 24;   	// 24-bit Immediate
 	} jtype;
 } instr_t;
+
 
 typedef enum : uint8_t {
 	// Group 0 (0 - 15): System & Memory Operations
@@ -85,6 +91,8 @@ typedef enum : uint8_t {
 	OP_LIS16	= 10U,		// Load Immediate Signed 16-bit
 	OP_LIU8		= 11U,		// Load Immediate Unsigned 8-bit
 	OP_LIU16	= 12U,		// Load Immediate Unsigned 16-bit
+
+	OP_CRV		= 13U,		// Clear Register Value (set all bits to 0)
 
 	// Group 1 (16 - 31): Arithmetic Operations
 	OP_ADDS		= 16U,		// Add Signed 
