@@ -25,7 +25,7 @@ end
 ## Roadmap
 
 * [ ] *1. Initial Toolchain Architecture:*
-  * [ ] **ISA**
+  * [x] **ISA**
   * [ ] **ABI**
   * [ ] **Formats**
   * [ ] **Utilities**
